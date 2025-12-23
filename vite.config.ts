@@ -7,8 +7,8 @@ export default defineConfig({
         outDir: './dist',
         minify: false,
     },
-    //base: './',
-    base: '/my-vite-react/',
+     base: process.env.APP_BASE || './',
+    //base: '/my-vite-react/',
 
     plugins: [react()],
     server: {
