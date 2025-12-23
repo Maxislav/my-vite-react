@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
     build: {
         outDir: './dist',
+        minify: false,
     },
 
     plugins: [react()],
@@ -15,5 +16,13 @@ export default defineConfig({
     },
     ssr: {
         noExternal: ['react-router-dom', 'react-router'],
+    },
+    css: {
+        devSourcemap: true,
+        preprocessorOptions: {
+            less: {
+                javascriptEnabled: true, // Разрешает inline JavaScript в less файлах
+            },
+        },
     },
 })

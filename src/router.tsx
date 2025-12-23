@@ -6,6 +6,7 @@ import {Somedd} from "./pages/some-test.tsx";
 import {ErrorPage} from "./pages/errr-page.tsx";
 import App from "./App.tsx";
 import {Layout} from "./pages/layout.tsx";
+import {English} from "./pages/english/english.tsx";
 
 
 
@@ -15,6 +16,10 @@ export const routesConfig: RouteObject[] = [
         element: <Layout />,
         errorElement: <ErrorPage />,
         children: [
+            {
+                path: 'eng',
+                    element: <English/>
+            },
             {
                 index: true, // This is the default route for "/"
                 element: <Home />,

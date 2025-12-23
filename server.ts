@@ -65,9 +65,10 @@ async function createServer() {
                 rootEl.innerHTML = appHtml;
             }
 
-            const html = indexTpl?.serialize()
+            const html = indexTpl?.serialize();
+            const { default: pretty } = await import('pretty');
 
-            res.status(200).set({'Content-Type': 'text/html'}).end(html)
+            res.status(200).set({'Content-Type': 'text/html'}).end(pretty(html))
 
 
         } catch (e: any) {
