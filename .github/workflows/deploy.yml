@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: ["master"] # Убедитесь, что ваша ветка называется main (или измените на master)
