@@ -7,6 +7,8 @@ export default defineConfig({
         outDir: './dist',
         minify: false,
     },
+    // base: './',
+    base: '/my-vite-react/',
 
     plugins: [react()],
     server: {
