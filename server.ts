@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import {fileURLToPath} from 'node:url'
 import express from 'express'
+import {JSDOM} from 'jsdom'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const isProd = process.env.NODE_ENV === 'production'
@@ -13,9 +14,9 @@ async function createServer() {
 
     if (!isProd) {
         // Development mode: Use Vite dev server
-        const { createServer: createViteServer } = await import('vite')
+        const {createServer: createViteServer} = await import('vite')
         vite = await createViteServer({
-            server: { middlewareMode: true },
+            server: {middlewareMode: true},
             appType: 'custom'
         })
         app.use(vite.middlewares)
@@ -54,12 +55,19 @@ async function createServer() {
                 // @ts-expect-error - this file is generated after build
                 render = (await import('./dist/server/entry-server.js')).render
             }
-            console.log(render)
-            const { html: appHtml } = await render(url)
-            const html = template.replace(`superbody`, appHtml)
 
-            res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
+            const {html: appHtml} = await render(url)
 
+            // const parser = new DOMParser();
+            const indexTpl = new JSDOM(template);
+            const rootEl = indexTpl.window.document.querySelector('#root');
+            if (rootEl) {
+                rootEl.innerHTML = appHtml;
+            }
+
+            const html = indexTpl?.serialize()
+
+            res.status(200).set({'Content-Type': 'text/html'}).end(html)
 
 
         } catch (e: any) {
