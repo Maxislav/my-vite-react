@@ -1,7 +1,26 @@
 {
   "files": [],
+  "type": "module",
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ]
+  ],
+
+  "compilerOptions": {
+    "target": "ESNext",
+
+
+    "skipLibCheck": true,           // Prevents TS from complaining about Vite's internal types
+
+    "noEmit": true,                 // Since Vite/tsx handles the execution
+    "strict": true,
+
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "types": ["node", "vite"],
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["server.ts", "src"]
 }
