@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:ssr": "npm run build:client && npm run build:server",
+    "build:prod": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
-    "build:github": "APP_BASE=/my-repo-name/ && npm run build:client",
     "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
+    "build:github": "APP_BASE=/my-repo-name/ && npm run build:client",
     "lint": "eslint .",
     "preview": "vite preview",
     "serve:prod": "cross-env NODE_ENV=production node --loader ts-node/esm server.ts"

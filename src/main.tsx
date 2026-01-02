@@ -16,6 +16,7 @@ import App from './App';
 //     </React.StrictMode>
 // )
 
+console.log('main tsx только дев csr рендер')
 
 
 ReactDOM.createRoot(document.getElementById('root') as Container).render(

@@ -17,13 +17,14 @@ export const routesConfig: RouteObject[] = [
         errorElement: <ErrorPage />,
         children: [
             {
-                path: 'eng',
-                    element: <English/>
-            },
-            {
                 index: true, // This is the default route for "/"
                 element: <Home />,
             },
+            {
+                path: 'eng',
+                    element: <English/>
+            },
+
             {
                 path: "about",
                 element: <About />,
