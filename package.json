@@ -12,7 +12,7 @@
     "build:server": "vite build --ssr src/entry-server.jsx --outDir dist/server",
     "lint": "eslint .",
     "preview": "vite preview",
-    "serve": "cross-env NODE_ENV=production node --loader ts-node/esm server.ts"
+    "serve:prod": "cross-env NODE_ENV=production node --loader ts-node/esm server.ts"
   },
   "dependencies": {
     "@types/compression": "^1.8.1",

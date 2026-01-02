@@ -17,19 +17,19 @@ import App from './App';
 // )
 
 
-//
-// ReactDOM.createRoot(document.getElementById('root') as Container).render(
-//     <React.StrictMode>
-//         <BrowserRouter>
-//             <App />
-//         </BrowserRouter>
-//     </React.StrictMode>
-// );
 
 ReactDOM.createRoot(document.getElementById('root') as Container).render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter>
             <App />
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>
 );
+//
+// ReactDOM.createRoot(document.getElementById('root') as Container).render(
+//     <React.StrictMode>
+//         <HashRouter>
+//             <App />
+//         </HashRouter>
+//     </React.StrictMode>
+// );
