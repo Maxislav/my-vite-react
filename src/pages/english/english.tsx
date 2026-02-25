@@ -15,6 +15,16 @@ export function English() {
                 </li>
                 <li>
                     <p className={style.english__title}>
+                       Расписание на день
+                    </p>
+                    <div className={style.english__description}>
+                        My day usually starts at 8 a.m. I have some coffee and eat breakfast. Then I start working. I work from home. I check my tasks for the day and have a couple of meetings where I share my progress with colleagues. We also discuss any issues and try to find solutions. By the end of the day, I need to solve the problems and finish my tasks on time. Every two weeks, we create an action plan for the next sprint.
+
+                    </div>
+
+                </li>
+                <li>
+                    <p className={style.english__title}>
                        Motivation. reasons for studying the language?
                     </p>
                     <div className={style.english__description}>
