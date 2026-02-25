@@ -20,7 +20,11 @@
     "types": ["node", "vite"],
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@app/*": ["./src/*"],// Замените на ваш реальный путь
+      "@env-config": ["./src/environment/env.ts"]// Замените на ваш реальный путь
+    }
   },
   "include": ["server.ts", "src"]
 }
