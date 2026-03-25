@@ -28,7 +28,7 @@ export function English() {
                        Motivation. reasons for studying the language?
                     </p>
                     <div className={style.english__description}>
-                        My main motivation is simple: I need to earn a living. To achieve this, I must work in an international company and communicate with people from different countries. I need to understand tasks clearly and complete them on time. Additionally, I must participate in project discussions and find the best possible solutions.
+                        My main motivation is simple: <b style={{color: 'blue'}}>I need to earn a living. </b> To achieve this, I must work in an international company and communicate with people from different countries. I need to understand tasks clearly and complete them on time. Additionally, I must participate in project discussions and find the best possible solutions.
 
                     </div>
 
